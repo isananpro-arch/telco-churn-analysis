@@ -57,6 +57,7 @@ The EDA revealed several clear patterns in customer churn, with contract type em
 * Payment methods and additional services also show differences in churn, although their impact appears weaker than contract type and tenure.
 
 Overall, the analysis suggests that contract type, customer commitment and tenure are key factors behind churn.
+
 ---
 
 ### 4. Feature Engineering
@@ -138,6 +139,7 @@ Customers on month-to-month contracts churn at a much higher rate than those on 
 Tenure shows a clear inverse relationship with churn. Customers are more likely to churn during the early stages of customer lifecycle, while the churn rates decrease as tenure increases.
 
 This suggests that the first few months are a critical period for customer retention, making early engagement and onboarding experience important areas for reducing churn.
+
 ---
 
 ### 3. High-risk customer profile emerges clearly
@@ -151,6 +153,7 @@ The analysis reveals a clear high-risk customer profile. Customers are more like
 * Fewer additional services
 
 These characteristics frequently appear among customers with higher churn rates, suggesting that new, less-engaged customers on flexible contracts may require greater retention attention.
+
 ---
 
 ### 4. Model interpretation aligns with EDA
