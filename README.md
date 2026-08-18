@@ -15,14 +15,14 @@ The dataset contains **7,043 customer records and 21 variables**, covering custo
 
 Key variables include:
 
-* `tenure` — how long the customer has stayed with the company
-* `Contract` — contract type (month-to-month, one year, two year)
-* `InternetService` — type of internet service
-* `PaymentMethod` — how the customer pays
-* `MonthlyCharges` — monthly billing amount
-* `TotalCharges` — total amount billed to date
-* `TechSupport`, `OnlineSecurity` — value-added services
-* `Churn` — whether the customer left
+* tenure — how long the customer has stayed with the company
+* Contract — contract type (month-to-month, one year, two year)
+* InternetService — type of internet service
+* PaymentMethod — how the customer pays
+* MonthlyCharges — monthly billing amount
+* TotalCharges — total amount billed to date
+* TechSupport, OnlineSecurity — value-added services
+* Churn — whether the customer left
 
 ---
 
@@ -32,7 +32,7 @@ Key variables include:
 
 The first step was simply to understand what the dataset is actually telling us — structure, distributions, missing values, and whether anything looked inconsistent.
 
-The dataset is clean in terms of duplicates, but required attention around data types (especially `TotalCharges`) and categorical consistency.
+The dataset is clean in terms of duplicates, but required attention around data types and categorical consistency.
 
 ---
 
@@ -40,10 +40,10 @@ The dataset is clean in terms of duplicates, but required attention around data 
 
 The main cleaning steps included:
 
-* Converting `TotalCharges` into a numeric format
-* Handling missing/blank values in `TotalCharges`
-* Standardising service categories like *“No internet service”* and *“No phone service”*
-* Converting `SeniorCitizen` into a more interpretable bins format
+* Converting TotalCharges into a numeric format
+* Handling missing/blank values in TotalCharges
+* Standardizing service categories like *“No internet service”* and *“No phone service”*
+* Converting SeniorCitizen into a more interpretable bins format
 
 ---
 
