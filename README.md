@@ -206,6 +206,10 @@ This suggests that retention efforts should be targeted toward high-risk custome
 
 ---
 
+## Power BI
+
+The Power BI dashboard is a 3-page, bookmark-navigated report analyzing the standard Telco Customer Churn dataset (table Telco_Churn_PowerBI). The Overview page shows high-level KPIs (average monthly charges, customer count, churn rate, count of churners, and monthly revenue at risk). The Demographics page breaks down churn by gender, senior citizen status, partner/dependents, and average monthly charge by segment. The Churn Drivers page surfaces the service/account factors linked to churn — contract type, internet service, payment method, tenure trends, and contract × payment/internet heatmaps. Navigation between pages is handled via bookmarks (not native page tabs), with a toggleable filters panel offering slicers for contract, internet service, payment method, tenure group, and churn status.
+
 ## Tools & Technologies
 
 * Python
@@ -216,6 +220,7 @@ This suggests that retention efforts should be targeted toward high-risk custome
 * scikit-learn
 * Jupyter Notebook
 * GitHub
+* PowerBI
 
 ---
 
@@ -226,6 +231,8 @@ telco-churn-analysis/
 │
 ├── README.md
 ├── Telco_Churn.ipynb
+├── Telco_Churn_PowerBI.csv
+├── Telco_Dashboard.pbix
 └── data/
     └── telco_churn.csv
 ```
