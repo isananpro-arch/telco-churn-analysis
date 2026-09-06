@@ -43,7 +43,7 @@ The main cleaning steps included:
 * Converting TotalCharges into a numeric format
 * Handling missing/blank values in TotalCharges
 * Standardizing service categories like *“No internet service”* and *“No phone service”*
-* Converting SeniorCitizen into a more interpretable bins format
+* Converting the binary SeniorCitizen indicator from 0/1 into readable No/Yes labels
 
 ---
 
@@ -62,24 +62,21 @@ Overall, the analysis suggests that contract type, customer commitment and tenur
 
 ### 4. Feature Engineering
 
-Feature engineering was used create variables that better represent customer profiles and behaviors.
+Feature engineering was used to create variables that better represent customer profiles and behaviors.
 
 This included:
 
 * Creating variables that reflect customer engagement and service usage
 * Grouping related services into more meaningful categories
 * Structuring variables to better reflect customer engagement levels
-* Adding a synthetic geographic component (based on population-style weighting) to explore whether location-based patterns.
 
-The goal of enriching the dataset was to make it more representative of real-world customer behavior without adding unnecessary complexity.
+The goal of enriching the dataset was to make it more representative of real-world customer behavior without adding unnecessary complexity. The engineered segmentation variables were used for exploratory analysis and dashboard reporting. The predictive models were trained using the cleaned original customer variables to avoid redundant features and synthetic information.
 
 ---
 
 ### 5. Multicollinearity Check
 
-Before modelling, numerical variables were checked for multicollinearity to identify highly overlapping information between the features/variables.
-
-Results showed that some expected relationships exist between variables, but no severe multicollinearity that would impact model interpretation.
+Multicollinearity diagnostics identified strong overlap among several service-related variables, particularly MonthlyCharges, internet-service categories, and subscribed services. Because these variables are structurally related, individual Logistic Regression coefficients should be interpreted cautiously. TotalCharges and engineered service-count variables were excluded from the predictive model to reduce redundancy.
 
 ---
 
@@ -90,7 +87,7 @@ Two models were tested to predict customer churn:
 * Logistic Regression as the baseline model
 * Random Forest as the comparison model
 
-Logistic Regression model used class balancing to account for the lower number of churned customers.
+Both models used class weighting to address the lower number of churned customers.
 
 The models were evaluated using
 
@@ -99,7 +96,7 @@ The models were evaluated using
 * Recall
 * ROC-AUC
 
-The main focus was recall and overall churn prediction, rather than accuract alonce, since correctly identifying customers likely to churn is more valuable for retention efforts.
+The main focus was recall and overall churn prediction, rather than accuracu alone, since correctly identifying customers likely to churn is more valuable for retention efforts.
 
 ---
 
@@ -150,7 +147,7 @@ The analysis reveals a clear high-risk customer profile. Customers are more like
 * Fiber optic internet
 * Short tenure
 * Electronic check payment
-* Fewer additional services
+* Fewer subscribed add-on services
 
 These characteristics frequently appear among customers with higher churn rates, suggesting that new, less-engaged customers on flexible contracts may require greater retention attention.
 
@@ -234,7 +231,7 @@ telco-churn-analysis/
 ├── Telco_Churn_PowerBI.csv
 ├── Telco_Dashboard.pbix
 └── data/
-    └── telco_churn.csv
+    └── WA_Fn-UseC_-Telco-Customer-Churn.csv
 ```
 
 ---
